@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h2>Goal Details</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>Title</th>
+            <td th:text="${goal.title}"></td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td th:text="${goal.status}"></td>
+        </tr>
+        <tr>
+            <th>Details</th>
+            <td th:text="${goal.details}"></td>
+        </tr>
+        <tr>
+            <th>Target Date</th>
+            <td th:text="${goal.targetDate}"></td>
+        </tr>
+    </table>
+    <a href="/goals" class="btn btn-primary">Back to Goals</a>
+</div>
+</body>
+</html>

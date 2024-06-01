@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+.card {
+    flex: 1;
+    margin: 1rem;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+

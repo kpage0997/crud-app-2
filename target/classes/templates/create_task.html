@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h2>Create a New Task</h2>
+    <form th:action="@{/tasks}" th:object="${task}" method="post">
+        <div class="form-group">
+            <label for="taskGoalId">Goal ID</label>
+            <input type="number" class="form-control" id="taskGoalId" th:field="*{goal.goalId}" th:value="${goalId}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="taskTitle">Title</label>
+            <input type="text" class="form-control" id="taskTitle" th:field="*{title}" required>
+        </div>
+        <div class="form-group">
+            <label for="taskStatus">Status</label>
+            <select class="form-control" id="taskStatus" th:field="*{status}">
+                <option value="pending">Pending</option>
+                <option value="in-progress">In Progress</option>
+                <option value="done">Done</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="taskDetails">Details</label>
+            <textarea class="form-control" id="taskDetails" th:field="*{details}"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Task</button>
+    </form>
+</div>
+</body>
+</html>

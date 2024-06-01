@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container">
+    <h1 class="my-4" th:text="${task.title}">Task Title</h1>
+
+    <div class="card">
+        <h3>Details</h3>
+        <p th:text="${task.details}">Task Details</p>
+        <p>Status: <span th:text="${task.status}">Pending</span></p>
+        <p>Goal: <span th:text="${task.goal.title}">Goal Title</span></p>
+        <a th:href="@{/tasks}" class="btn btn-secondary">Back to Tasks</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

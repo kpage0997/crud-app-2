@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h2>All Tasks</h2>
+    <a href="/tasks/new?goalId=${goalId}" class="btn btn-primary">Create New Task</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="task : ${tasks}">
+            <td th:text="${task.title}"></td>
+            <td th:text="${task.status}"></td>
+            <td th:text="${task.details}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/goals" class="btn btn-primary">Back to Goals</a>
+</div>
+</body>
+</html>
